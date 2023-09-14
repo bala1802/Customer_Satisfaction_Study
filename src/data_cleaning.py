@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 
 class DataStrategy(ABC):
     """
+    Abstract class, defining the Strategy methods
     """
     
     @abstractmethod
@@ -72,4 +73,23 @@ class DataDivideStrategy(DataStrategy):
         except Exception as e:
             logging.error('Error in dividing data: {}'.format(e))
             raise e
-        
+
+class DataCleaning:
+    """
+    Processes the data
+    Divide the data
+    """
+
+    def __init__(self, data: pd.DataFrame, strategy: DataStrategy):
+        self.data = data
+        self.strategy = strategy
+    
+    def handle_data(self) -> Union[pd.DataFrame, pd.Series]:
+        """
+        Handle data
+        """
+        try:
+            return self.strategy.handle_data(self.data)
+        except Exception as e:
+            logging.error("Error in handling data: {}".format(e))
+            raise e
