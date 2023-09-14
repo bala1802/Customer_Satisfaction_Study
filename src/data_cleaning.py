@@ -39,7 +39,7 @@ class DataPreProcessStrategy(DataStrategy):
                 ],
                 axis=1
             )
-            data["product_weight_g"].fillna(data["product _weight_g"].median () , inplace=True) 
+            data["product_weight_g"].fillna(data["product_weight_g"].median () , inplace=True) 
             data["product_length_cm"].fillna(data["product_length_cm"].median () , inplace=True) 
             data["product_height_cm"].fillna(data["product_height_cm"].median () , inplace=True)
             data["product_width_cm"].fillna (data["product_width_cm"].median () , inplace=True) 
