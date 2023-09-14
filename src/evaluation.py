@@ -37,7 +37,7 @@ class MSE(Evaluation):
             logging.error('Error in calculating MSE: {}'.format(e))
             raise e
 
-class R2Score(Evaluation):
+class R2(Evaluation):
 
     """
     Evaluation strategy that uses R2 Score
