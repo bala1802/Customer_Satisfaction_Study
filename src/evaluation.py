@@ -33,6 +33,7 @@ class MSE(Evaluation):
             logging.info("Calculating MSE")
             mse = mean_squared_error(y_true=y_true, y_pred=y_pred)   
             logging.info("MSE: {}".format(mse))
+            return mse
         except Exception as e:
             logging.error('Error in calculating MSE: {}'.format(e))
             raise e
@@ -62,6 +63,7 @@ class RMSE(Evaluation):
             logging.info("Calculating RMSE Value")
             rmse = mean_squared_error(y_true=y_true, y_pred=y_pred, squared=False)
             logging.info("RMSE: {}".format(rmse))
+            return rmse
         except Exception as e:
             logging.error("Error is calculating the RMSE Score: {}".format(e))
             raise e
