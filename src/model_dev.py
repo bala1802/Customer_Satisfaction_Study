@@ -19,7 +19,7 @@ class Model(ABC):
         Returns:
             None
         """
-        return None
+        pass
     
 class LinearRegressionModel(Model):
     
@@ -39,6 +39,7 @@ class LinearRegressionModel(Model):
             reg = LinearRegression(**kwargs)
             reg.fit(X_train, y_train)
             logging.info("Model training completed")
+            return reg
         except Exception as e:
             logging.error("Error in training model: {}".format(e))
             raise e
